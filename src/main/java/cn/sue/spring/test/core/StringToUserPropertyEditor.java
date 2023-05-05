@@ -1,0 +1,15 @@
+package cn.sue.spring.test.core;
+
+import java.beans.PropertyEditor;
+import java.beans.PropertyEditorSupport;
+
+public class StringToUserPropertyEditor extends PropertyEditorSupport implements PropertyEditor {
+
+	@Override
+	public void setAsText(String text) throws IllegalArgumentException {
+		User user = new User();
+		user.setUserName(text);
+		this.setValue(user);
+	}
+
+}
