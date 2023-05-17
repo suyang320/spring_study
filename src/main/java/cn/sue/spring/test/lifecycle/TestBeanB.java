@@ -10,7 +10,7 @@ public class TestBeanB {
     private TestBeanA testBeanA;
 
     public TestBeanB() {
-        System.out.println("【TestBeanB.默认构造器】");
+        System.out.println("TestBeanB{} 默认构造器");
     }
 }
 

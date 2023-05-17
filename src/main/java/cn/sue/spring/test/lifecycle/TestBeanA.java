@@ -17,15 +17,15 @@ public class TestBeanA implements BeanFactoryAware, BeanNameAware,
 
     @PostConstruct
     public void init() {
-        System.out.println("【TestBeanA.@PostConstruct】");
+        System.out.println("TestBeanA{} @PostConstruct");
     }
 
     public TestBeanA() {
-        System.out.println("【TestBeanA.默认构造器】");
+        System.out.println("TestBeanA{} 默认构造函数");
     }
 
     public TestBeanA(String name) {
-        System.out.println("【TestBeanA.带参构造器】");
+        System.out.println("TestBeanA{} 有参构造函数");
     }
 
     public String getName() {
@@ -62,14 +62,14 @@ public class TestBeanA implements BeanFactoryAware, BeanNameAware,
     @Override
     public void setBeanFactory(BeanFactory arg0) throws BeansException {
         System.out
-                .println("【BeanFactoryAware.setBeanFactory】来自TestBeanA");
+                .println("BeanFactoryAware.setBeanFactory() 来自TestBeanA");
         this.beanFactory = arg0;
     }
 
     // 这是BeanNameAware接口方法
     @Override
     public void setBeanName(String arg0) {
-        System.out.println("【BeanNameAware.setBeanName】来自TestBeanA");
+        System.out.println("BeanNameAware.setBeanName() 来自TestBeanA");
         this.beanName = arg0;
     }
 
@@ -77,22 +77,22 @@ public class TestBeanA implements BeanFactoryAware, BeanNameAware,
     @Override
     public void afterPropertiesSet() throws Exception {
         System.out
-                .println("【InitializingBean.afterPropertiesSet】来自TestBeanA");
+                .println("InitializingBean.afterPropertiesSet() 来自TestBeanA");
     }
 
     // 这是DiposibleBean接口方法
     @Override
     public void destroy() throws Exception {
-        System.out.println("【DiposibleBean.destory】来自TestBeanA");
+        System.out.println("DiposibleBean.destory() 来自TestBeanA");
     }
 
     // 通过<bean>的init-method属性指定的初始化方法
     public void myInit() {
-        System.out.println("【TestBeanA.myInit】");
+        System.out.println("TestBeanA.myInit()");
     }
 
     // 通过<bean>的destroy-method属性指定的初始化方法
     public void myDestory() {
-        System.out.println("【TestBeanA.destroy-method】");
+        System.out.println("TestBeanA.destroy-method()");
     }
 }

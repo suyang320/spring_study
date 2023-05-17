@@ -4,9 +4,11 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package="cn.sue.spring.test" >
+    <context:component-scan base-package="cn.sue.spring.test.lifecycle" >
     </context:component-scan>
 
 <!--    <bean id="user" class="cn.sue.spring.test.core.UserService"></bean>-->
-    <bean id="user" class="cn.sue.spring.test.lifecycle.TestBeanA"></bean>
+    <bean id="testBeanA" class="cn.sue.spring.test.lifecycle.TestBeanA">
+        <property name="name" value="Sue.test"/>
+    </bean>
 </beans>

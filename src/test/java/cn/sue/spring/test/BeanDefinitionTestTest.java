@@ -226,7 +226,5 @@ public class BeanDefinitionTestTest {
     @Test
     public void testLifeCycle() {
         ClassPathXmlApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext("spring.xml");
-
-        System.out.println("user");
     }
 }

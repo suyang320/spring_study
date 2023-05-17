@@ -10,14 +10,14 @@ import org.springframework.stereotype.Component;
  * </p>
  *
  * @author Sue
- * @className MyBeanPostPeocessor
+ * @className MyBeanPostProcessor
  * @create 2023/4/25
  **/
 @Component
 public class MyBeanPostProcessor implements BeanPostProcessor {
     public MyBeanPostProcessor() {
         super();
-        System.out.println("【MyBeanPostProcessor】BeanPostProcessor实现类的构造函数");
+        System.out.println("BeanPostProcessor{}实现类MyBeanPostProcessor{}的构造函数");
     }
 
     // 实例化、依赖注入完毕，在调用显示的初始化之前完成一些定制的业务
@@ -27,7 +27,7 @@ public class MyBeanPostProcessor implements BeanPostProcessor {
 
         if (arg0.getClass() == TestBeanA.class || arg0.getClass() == TestBeanB.class) {
             System.out
-                    .println("【BeanPostProcessor.postProcessAfterInitialization】来自MyBeanPostProcessor，beanName:" + arg1);
+                    .println("BeanPostProcessor.postProcessAfterInitialization() 来自MyBeanPostProcessor，beanName:" + arg1);
         }
         return arg0;
     }
@@ -39,7 +39,7 @@ public class MyBeanPostProcessor implements BeanPostProcessor {
 
         if (arg0.getClass() == TestBeanA.class || arg0.getClass() == TestBeanB.class) {
             System.out
-                    .println("【BeanPostProcessor.postProcessBeforeInitialization】来自MyBeanPostProcessor，beanName:" + arg1);
+                    .println("BeanPostProcessor.postProcessBeforeInitialization() 来自MyBeanPostProcessor，beanName:" + arg1);
         }
         return arg0;
     }

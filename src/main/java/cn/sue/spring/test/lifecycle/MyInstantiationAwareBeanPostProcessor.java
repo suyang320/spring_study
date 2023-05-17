@@ -21,7 +21,7 @@ public class MyInstantiationAwareBeanPostProcessor implements InstantiationAware
     public MyInstantiationAwareBeanPostProcessor() {
         super();
         System.out
-                .println("【MyInstantiationAwareBeanPostProcessor】InstantiationAwareBeanPostProcessorAdapter实现类的构造函数");
+                .println("InstantiationAwareBeanPostProcessorAdapter{}实现类MyInstantiationAwareBeanPostProcessor{}的构造函数");
     }
 
     // 接口方法、实例化Bean之前调用
@@ -30,7 +30,7 @@ public class MyInstantiationAwareBeanPostProcessor implements InstantiationAware
 
         if (bean.getClass() == TestBeanA.class || bean.getClass() == TestBeanB.class) {
             System.out
-                    .println("【InstantiationAwareBeanPostProcessorAdapter.postProcessBeforeInitialization】来自MyInstantiationAwareBeanPostProcessor，beanName:" + beanName);
+                    .println("InstantiationAwareBeanPostProcessorAdapter.postProcessBeforeInitialization() 来自MyInstantiationAwareBeanPostProcessor，beanName:" + beanName);
 
         }
         return bean;
@@ -42,7 +42,7 @@ public class MyInstantiationAwareBeanPostProcessor implements InstantiationAware
             throws BeansException {
         if (bean.getClass() == TestBeanA.class || bean.getClass() == TestBeanB.class) {
             System.out
-                    .println("【InstantiationAwareBeanPostProcessorAdapter.postProcessAfterInitialization】来自MyInstantiationAwareBeanPostProcessor，beanName:" + beanName);
+                    .println("InstantiationAwareBeanPostProcessorAdapter.postProcessAfterInitialization() 来自MyInstantiationAwareBeanPostProcessor，beanName:" + beanName);
         }
 
         return bean;
@@ -56,7 +56,7 @@ public class MyInstantiationAwareBeanPostProcessor implements InstantiationAware
 
         if (bean.getClass() == TestBeanA.class || bean.getClass() == TestBeanB.class) {
             System.out
-                    .println("【InstantiationAwareBeanPostProcessorAdapter.postProcessPropertyValues】来自MyInstantiationAwareBeanPostProcessor，beanName:" + beanName);
+                    .println("InstantiationAwareBeanPostProcessorAdapter.postProcessPropertyValues() 来自MyInstantiationAwareBeanPostProcessor，beanName:" + beanName);
         }
 
         return pvs;
