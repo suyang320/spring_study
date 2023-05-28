@@ -8,7 +8,7 @@
     </context:component-scan>
 
 <!--    <bean id="user" class="cn.sue.spring.test.core.UserService"></bean>-->
-    <bean id="testBeanA" class="cn.sue.spring.test.lifecycle.TestBeanA">
+    <bean id="testBeanA" class="cn.sue.spring.test.lifecycle.TestBeanA" init-method="myInit" destroy-method="myDestory">
         <property name="name" value="Sue.test"/>
     </bean>
 </beans>
